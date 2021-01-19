@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d9a7a-2aff-4f68-b990-5f003036a9db" name="Default Changelist" comment="" />
+    <list default="true" id="871d9a7a-2aff-4f68-b990-5f003036a9db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Dto/BookingResult.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/SeatFinder/BalanceAcrossRows.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/SeatFinder/SingleRow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0ff6f86e-8bd1-4a7d-9444-af8b90fc1e0f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0ff6f86e-8bd1-4a7d-9444-af8b90fc1e0f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Dto/PlaneSeatsMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dto/PlaneSeatsMap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Booking/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Booking/Booking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Booking/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Booking/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/PlaneSeatsMap/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PlaneSeatsMap/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +44,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -130,14 +167,17 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Dto" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/Dto" />
     </key>
   </component>
@@ -147,6 +187,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -160,41 +201,62 @@
       <workItem from="1610185039893" duration="40745000" />
       <workItem from="1610477471723" duration="459000" />
       <workItem from="1610561815187" duration="148000" />
+      <workItem from="1611049933026" duration="15125000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610197743910">
-      <screen x="0" y="23" width="1792" height="1053" />
+    <state x="2374" y="-37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611064148353">
+      <screen x="1680" y="-295" width="2509" height="1417" />
     </state>
     <state x="496" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1053@0.23.1792.1053" timestamp="1610197743910" />
-    <state x="709" y="272" key="#com.intellij.ide.util.MemberChooser" timestamp="1610315758016">
-      <screen x="0" y="23" width="1792" height="1053" />
+    <state x="2374" y="-37" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-295.2509.1417/0.23.1680.1027@1680.-295.2509.1417" timestamp="1611064148353" />
+    <state x="2673" y="40" key="#com.intellij.ide.util.MemberChooser" timestamp="1611077715240">
+      <screen x="1680" y="-295" width="2509" height="1417" />
     </state>
     <state x="709" y="272" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1053@0.23.1792.1053" timestamp="1610315758016" />
+    <state x="2673" y="40" key="#com.intellij.ide.util.MemberChooser/1680.-295.2509.1417/0.23.1680.1027@1680.-295.2509.1417" timestamp="1611077715240" />
     <state x="673" y="143" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610214951096">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
     <state x="673" y="143" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1053@0.23.1792.1053" timestamp="1610214951096" />
-    <state x="634" y="311" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610228823403">
-      <screen x="0" y="23" width="1792" height="1053" />
+    <state x="2568" y="93" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611071504259">
+      <screen x="1680" y="-295" width="2509" height="1417" />
     </state>
     <state x="634" y="311" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1792.1053@0.23.1792.1053" timestamp="1610228823403" />
-    <state x="555" y="282" key="NewPhpClassDialog" timestamp="1610315628647">
-      <screen x="0" y="23" width="1792" height="1053" />
+    <state x="2568" y="93" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1680.-295.2509.1417/0.23.1680.1027@1680.-295.2509.1417" timestamp="1611071504259" />
+    <state x="2638" y="25" key="NewPhpClassDialog" timestamp="1611071405402">
+      <screen x="1680" y="-295" width="2509" height="1417" />
     </state>
     <state x="555" y="282" key="NewPhpClassDialog/0.23.1792.1053@0.23.1792.1053" timestamp="1610315628647" />
-    <state x="397" y="188" key="SettingsEditor" timestamp="1610197916392">
-      <screen x="0" y="23" width="1792" height="1053" />
+    <state x="2638" y="25" key="NewPhpClassDialog/1680.-295.2509.1417/0.23.1680.1027@1680.-295.2509.1417" timestamp="1611071405402" />
+    <state x="361" y="184" key="SettingsEditor" timestamp="1611059709139">
+      <screen x="0" y="23" width="1629" height="1027" />
     </state>
+    <state x="361" y="184" key="SettingsEditor/0.23.1629.1027@0.23.1629.1027" timestamp="1611059709139" />
     <state x="397" y="188" key="SettingsEditor/0.23.1792.1053@0.23.1792.1053" timestamp="1610197916392" />
     <state x="738" y="234" width="346" height="631" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1610224801799">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
     <state x="738" y="234" width="346" height="631" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1792.1053@0.23.1792.1053" timestamp="1610224801799" />
+    <state x="2739" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611063895455">
+      <screen x="1680" y="-295" width="2509" height="1417" />
+    </state>
+    <state x="2739" y="336" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.-295.2509.1417/0.23.1680.1027@1680.-295.2509.1417" timestamp="1611063895455" />
     <state x="561" y="257" key="search.everywhere.popup" timestamp="1610213944043">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>

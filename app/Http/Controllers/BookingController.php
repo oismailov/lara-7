@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Dto;
 use App\Http\Requests;
 use App\Http\Resources\BookingResource;
+use App\Models;
 use App\Models\Booking;
 use App\Models\Plane;
 use App\Models\SingleRowSeatsMap;
 use App\Services;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 /**
@@ -22,7 +24,6 @@ class BookingController extends Controller
      * @var Services\Booking\Booking
      */
     private Services\Booking\Booking $bookingService;
-
     /**
      * @var Services\PlaneSeatsMap\PlaneSeatsMap
      */
@@ -57,25 +58,13 @@ class BookingController extends Controller
 
         $planeSeatsMap = $this->planeSeatsMapService->build($planeDto);
 
-        $mapIds = SingleRowSeatsMap::where('plane_type_id', $plane->type->id)->pluck('id')->toArray();
+        $bookedSeatsMap = SingleRowSeatsMap::where('plane_type_id', $plane->type->id)->pluck('id')->toArray();
 
-        $bookings = Booking::whereIn('map_id', $mapIds)->where('plane_id', $planeDto->getId())->get();
-        /** remove booked seats from map */
-        if ($bookings->count() > 0) {
-            foreach ($planeSeatsMap->getRows() as $row) {
-                foreach ($row->getSubRows() as $subRow) {
-                    foreach ($subRow->getSeats() as $seat) {
-                        foreach ($bookings as $booking) {
-                            if ($seat->getMapId() === $booking->map_id && $booking->row_number === $row->getId()) {
-                                $subRow->getSeats()->remove($seat);
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        $bookings = Booking::whereIn('map_id', $bookedSeatsMap)->where('plane_id', $planeDto->getId())->get();
 
-        $bookingsCollection = $this->bookingService->proceed(
+        $this->syncMap($bookings, $planeSeatsMap);
+
+        $bookings = $this->bookingService->proceed(
             $planeDto,
             $planeSeatsMap,
             new Dto\Customer(
@@ -84,6 +73,34 @@ class BookingController extends Controller
             )
         );
 
-        return BookingResource::collection($bookingsCollection->toArray());
+        return BookingResource::collection($bookings->toArray());
+    }
+
+    /**
+     * Remove booked seats from map.
+     *
+     * @param Booking $bookings
+     * @param Dto\PlaneSeatsMap $planeSeatsMap
+     */
+    private function syncMap(Collection $bookings, Dto\PlaneSeatsMap $planeSeatsMap)
+    {
+        /** remove booked seats from map */
+        if ($bookings->count() > 0) {
+            foreach ($planeSeatsMap->getRows() as $row) {
+                foreach ($row->getSubRows() as $subRow) {
+                    foreach ($subRow->getSeats() as $seat) {
+                        foreach ($bookings as $booking) {
+                            if ($seat->getMapId() === $booking->map_id && $booking->row_number === $row->getId()) {
+                                if ($seat->getLocation() == Models\Seat::WINDOW_SEAT_LOCATION) {
+                                    $planeSeatsMap->decrementWindowSeats();
+                                }
+
+                                $subRow->getSeats()->remove($seat);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
