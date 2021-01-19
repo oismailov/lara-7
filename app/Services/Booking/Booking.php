@@ -3,6 +3,7 @@
 namespace App\Services\Booking;
 
 use App\Dto;
+use Ramsey\Collection\Collection;
 
 /**
  * Interface Booking
@@ -16,7 +17,7 @@ interface Booking
      * @param Dto\PlaneSeatsMap $planeSeatsMap
      * @param Dto\Customer $customer
      *
-     * @return mixed
+     * @return Collection | Models\Booking[]
      */
     public function proceed(
         Dto\Plane $plane,

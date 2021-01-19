@@ -18,6 +18,7 @@ class Service implements PlaneSeatsMap
      */
     public function build(Dto\Plane $planeDto): Dto\PlaneSeatsMap
     {
+        $windowSeatsCount = 0;
         /** @var Models\Plane $plane */
         $plane = Models\Plane::where('id', $planeDto->getId())->firstorFail();
         $singleRowsSeatsMap = Models\SingleRowSeatsMap::where('plane_type_id', $plane->type->id)->get();
@@ -29,6 +30,9 @@ class Service implements PlaneSeatsMap
             $subRowsCollection = new Collection(Dto\SubRow::class);
             /** @var Models\SingleRowSeatsMap $seatMap */
             foreach ($singleRowsSeatsMap as $seatMap) {
+                if ($seatMap->seat_location->name === Models\Seat::WINDOW_SEAT_LOCATION) {
+                    $windowSeatsCount++;
+                }
                 $side = $seatMap->sub_row_location->side;
                 $subRows[$side][] = [
                     'seat_id' => $seatMap->id,
@@ -49,7 +53,10 @@ class Service implements PlaneSeatsMap
             $rowsDto->add(new Dto\Row($i, $subRowsCollection));
         }
 
-        return new Dto\PlaneSeatsMap($rowsDto);
+        $planeSeatsMap = new Dto\PlaneSeatsMap($rowsDto);
+        $planeSeatsMap->setWindowSeats($windowSeatsCount);
+
+        return $planeSeatsMap;
     }
 
     /**

@@ -15,6 +15,10 @@ class PlaneSeatsMap
      * @var Collection | Row[]
      */
     private Collection $rows;
+    /**
+     * @var int
+     */
+    private int $windowSeats;
 
     /**
      * PlaneSeatsMap constructor.
@@ -32,5 +36,30 @@ class PlaneSeatsMap
     public function getRows(): Collection
     {
         return $this->rows;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWindowSeats(): int
+    {
+        return $this->windowSeats;
+    }
+
+    /**
+     * @param int $windowSeats
+     *
+     * @return $this
+     */
+    public function setWindowSeats(int $windowSeats): self
+    {
+        $this->windowSeats = $windowSeats;
+
+        return $this;
+    }
+
+    public function decrementWindowSeats(): void
+    {
+        $this->windowSeats--;
     }
 }
